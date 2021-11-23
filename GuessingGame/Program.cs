@@ -6,8 +6,6 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-
-
             Console.WriteLine("Hi let's play a game.\nType 1 to go solo, against pseudo-number genernator");
             Console.WriteLine("Type 2 to play with you friend.");
 
