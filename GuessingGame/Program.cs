@@ -26,8 +26,13 @@ namespace GuessingGame
 
         static void SoloGame()
         {
-            Console.WriteLine("Guess a number");
-            Random r = new Random();
+            Player player = new();
+            Console.WriteLine("Give us your name, so you will be addressed as such");
+            player.Name = Console.ReadLine();
+
+            Console.WriteLine("{0}, guess a number", player.Name);
+
+            Random r = new();
             int guesses = 1;
             int generated = r.Next(0, new Random().Next(100, 1000));
 
@@ -36,7 +41,7 @@ namespace GuessingGame
                 int number = Convert.ToInt32(Console.ReadLine());
                 if(number == generated)
                 {
-                    Console.WriteLine("Congratulations, you win");
+                    Console.WriteLine("Congratulations {0}, you win", player.Name);
                     Console.WriteLine("Number of guesses: {0}", guesses);
                 }
                 Console.WriteLine("Oops, you missed. Try again");
